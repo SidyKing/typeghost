@@ -1,6 +1,8 @@
 # 👻 TypeGhost
 
 [![CI](https://github.com/SidyKing/typeghost/actions/workflows/ci.yml/badge.svg)](https://github.com/SidyKing/typeghost/actions/workflows/ci.yml)
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/PapaSidyMactarTRAORE.typeghost?label=VS%20Code%20Marketplace&color=7c3aed)](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/PapaSidyMactarTRAORE.typeghost?color=a78bfa)](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)
 [![License: MIT](https://img.shields.io/badge/License-MIT-a78bfa.svg)](LICENSE)
 
 > **A teleprompter for your code.** Write it once, "type" it live.
@@ -21,7 +23,7 @@ Press play. Your code types itself at a human pace while you narrate. Pause anyt
 
 ## VS Code extension
 
-1. Install the extension (Marketplace listing coming — for now: `npm install && npm run build`, then F5 in VS Code, or `npx vsce package` in `packages/vscode-extension`).
+1. **[Install TypeGhost from the Marketplace](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)** — or search "TypeGhost" in the Extensions view (`Ctrl/Cmd+Shift+X`).
 2. Copy your prepared code, open the file you'll "write" in front of your audience.
 3. Run **`TypeGhost: Play From Clipboard`** — or **`TypeGhost: Hacker Mode From Clipboard`** and start mashing.
 
@@ -86,7 +88,8 @@ The engine's golden rule, enforced by tests: **whatever the simulation does — 
 
 ## Roadmap
 
-- [ ] Publish `@typeghost/core` to npm and the extension to the VS Code Marketplace / Open VSX
+- [x] Publish the extension to the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)
+- [ ] Publish `@typeghost/core` to npm and the extension to Open VSX (VSCodium, Gitpod)
 - [ ] **Record mode** — code it once for real, TypeGhost captures and replays the session
 - [ ] Multi-file scenarios (open file, jump to line, edit in the middle)
 - [ ] Checkpoint control from a presentation remote / foot pedal
