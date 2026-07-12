@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build -w @typeghost/core && npm run build -w typeghost-vscode && npm run build -w @typeghost/web-demo",
+    "build": "npm run build -w @typeghost/core && npm run build -w typeghost && npm run build -w @typeghost/web-demo",
     "test": "npm run test --workspaces --if-present",
     "dev:web": "npm run dev --workspace @typeghost/web-demo"
   },

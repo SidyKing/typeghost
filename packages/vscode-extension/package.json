@@ -1,11 +1,24 @@
 {
-  "name": "typeghost-vscode",
+  "name": "typeghost",
   "displayName": "TypeGhost — fake live coding",
   "description": "A teleprompter for your code: replay pre-written code with human-like typing, or mash any keys and watch the real script come out.",
   "version": "0.1.0",
-  "publisher": "typeghost",
+  "publisher": "PapaSidyMactarTRAORE",
   "license": "MIT",
   "private": true,
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#3b1d7a",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SidyKing/typeghost"
+  },
+  "bugs": {
+    "url": "https://github.com/SidyKing/typeghost/issues"
+  },
+  "homepage": "https://github.com/SidyKing/typeghost#readme",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -95,7 +108,8 @@
   "scripts": {
     "build": "npm run typecheck && esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "package": "vsce package"
+    "vscode:prepublish": "npm run build",
+    "package": "vsce package --no-dependencies"
   },
   "dependencies": {
     "@typeghost/core": "^0.1.0"
