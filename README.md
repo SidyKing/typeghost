@@ -7,8 +7,7 @@
 
 TypeGhost replays pre-written code in your editor with human-like typing — irregular rhythm, thinking pauses, even typos that get noticed and fixed. Perfect for conference talks, screencasts, YouTube tutorials and classroom demos: no more typos in front of 300 people, no more "wait, what did I mistype?".
 
-<!-- TODO: demo GIF here — record the web demo or the VS Code extension -->
-<!-- ![TypeGhost demo](docs/demo.gif) -->
+![TypeGhost typing a fibonacci function by itself, pausing at a checkpoint, then finishing](docs/demo.gif)
 
 **[▶ Try the live demo in your browser](https://sidyking.github.io/typeghost/)** — no install needed.
 
