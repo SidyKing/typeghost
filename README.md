@@ -1,5 +1,8 @@
 # 👻 TypeGhost
 
+[![CI](https://github.com/SidyKing/typeghost/actions/workflows/ci.yml/badge.svg)](https://github.com/SidyKing/typeghost/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-a78bfa.svg)](LICENSE)
+
 > **A teleprompter for your code.** Write it once, "type" it live.
 
 TypeGhost replays pre-written code in your editor with human-like typing — irregular rhythm, thinking pauses, even typos that get noticed and fixed. Perfect for conference talks, screencasts, YouTube tutorials and classroom demos: no more typos in front of 300 people, no more "wait, what did I mistype?".
@@ -7,7 +10,7 @@ TypeGhost replays pre-written code in your editor with human-like typing — irr
 <!-- TODO: demo GIF here — record the web demo or the VS Code extension -->
 <!-- ![TypeGhost demo](docs/demo.gif) -->
 
-**[▶ Try the live demo in your browser](https://USER.github.io/typeghost/)** — no install needed.
+**[▶ Try the live demo in your browser](https://sidyking.github.io/typeghost/)** — no install needed.
 
 ## Two ways to fake it
 
