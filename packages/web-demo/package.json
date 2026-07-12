@@ -1,0 +1,20 @@
+{
+  "name": "@typeghost/web-demo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Browser playground for TypeGhost, built on Monaco.",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run typecheck && esbuild src/app.ts --bundle --outdir=dist --format=iife --sourcemap",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "dev": "esbuild src/app.ts --bundle --outdir=dist --sourcemap --servedir=. --serve=127.0.0.1:8123"
+  },
+  "dependencies": {
+    "@typeghost/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0",
+    "monaco-editor": "^0.52.2",
+    "typescript": "^5.5.4"
+  }
+}

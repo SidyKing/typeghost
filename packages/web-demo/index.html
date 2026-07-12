@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TypeGhost — a teleprompter for your code</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #a78bfa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem 1rem;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 1.9rem; }
+    header p { margin: 0.4rem 0 0; color: var(--muted); }
+    header a { color: var(--accent); text-decoration: none; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 2rem;
+    }
+    button {
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    button:hover:not(:disabled) { border-color: var(--accent); }
+    button:disabled { opacity: 0.45; cursor: default; }
+    button.primary { background: var(--accent); color: #14101f; font-weight: 600; border: none; }
+    label { color: var(--muted); font-size: 0.85rem; display: flex; align-items: center; gap: 0.35rem; }
+    #status { color: var(--accent); font-size: 0.85rem; min-width: 14rem; text-align: center; }
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 0 2rem 2rem;
+      min-height: 480px;
+    }
+    .pane {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .pane h2 {
+      margin: 0;
+      padding: 0.55rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    #script {
+      flex: 1;
+      background: transparent;
+      color: var(--text);
+      border: none;
+      resize: none;
+      padding: 1rem;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      outline: none;
+    }
+    #editor { flex: 1; min-height: 400px; }
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👻 TypeGhost</h1>
+    <p>
+      A teleprompter for your code — write it once, “type” it live.
+      <a href="https://github.com/USER/typeghost" id="repo-link">GitHub&nbsp;→</a>
+    </p>
+  </header>
+
+  <div class="controls">
+    <button id="play" class="primary">▶ Play</button>
+    <button id="pause" disabled>⏸ Pause / Resume</button>
+    <button id="stop" disabled>⏹ Stop</button>
+    <button id="hacker">🕶 Hacker mode</button>
+    <label>Speed <input type="range" id="speed" min="4" max="60" value="16" /></label>
+    <label><input type="checkbox" id="typos" checked /> Typos</label>
+    <span id="status">Ready. Press ▶ Play, or try Hacker mode.</span>
+  </div>
+
+  <main>
+    <div class="pane">
+      <h2>Your script (with TypeGhost directives)</h2>
+      <textarea id="script" spellcheck="false"></textarea>
+    </div>
+    <div class="pane">
+      <h2>Live editor — what your audience sees</h2>
+      <div id="editor"></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+  <script src="dist/app.js"></script>
+  <script>
+    require.config({
+      paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs' },
+    });
+    require(['vs/editor/editor.main'], function () {
+      window.initTypeGhostDemo(window.monaco);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "typeghost-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A teleprompter for your code — write it once, \"type\" it live.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @typeghost/core && npm run build -w typeghost-vscode && npm run build -w @typeghost/web-demo",
+    "test": "npm run test --workspaces --if-present",
+    "dev:web": "npm run dev --workspace @typeghost/web-demo"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "name": "typeghost-vscode",
+  "displayName": "TypeGhost — fake live coding",
+  "description": "A teleprompter for your code: replay pre-written code with human-like typing, or mash any keys and watch the real script come out.",
+  "version": "0.1.0",
+  "publisher": "typeghost",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "presentation",
+    "live coding",
+    "demo",
+    "auto type",
+    "screencast",
+    "typing simulator"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "typeghost.playFromClipboard",
+        "title": "TypeGhost: Play From Clipboard"
+      },
+      {
+        "command": "typeghost.playFromFile",
+        "title": "TypeGhost: Play From File…"
+      },
+      {
+        "command": "typeghost.hackerModeFromClipboard",
+        "title": "TypeGhost: Hacker Mode From Clipboard (your keys type the script)"
+      },
+      {
+        "command": "typeghost.hackerModeFromFile",
+        "title": "TypeGhost: Hacker Mode From File…"
+      },
+      {
+        "command": "typeghost.pauseResume",
+        "title": "TypeGhost: Pause / Resume"
+      },
+      {
+        "command": "typeghost.stop",
+        "title": "TypeGhost: Stop"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "typeghost.pauseResume",
+        "key": "ctrl+alt+t",
+        "mac": "cmd+alt+t",
+        "when": "typeghost.active"
+      },
+      {
+        "command": "typeghost.stop",
+        "key": "ctrl+alt+backspace",
+        "mac": "cmd+alt+backspace",
+        "when": "typeghost.active"
+      }
+    ],
+    "configuration": {
+      "title": "TypeGhost",
+      "properties": {
+        "typeghost.charsPerSecond": {
+          "type": "number",
+          "default": 14,
+          "description": "Average auto-typing speed, in characters per second."
+        },
+        "typeghost.typos": {
+          "type": "boolean",
+          "default": true,
+          "description": "Simulate occasional typos that get noticed and fixed (auto mode only)."
+        },
+        "typeghost.typoRate": {
+          "type": "number",
+          "default": 0.025,
+          "minimum": 0,
+          "maximum": 0.2,
+          "description": "Probability per letter of a simulated typo."
+        },
+        "typeghost.charsPerKeystroke": {
+          "type": "number",
+          "default": 3,
+          "minimum": 1,
+          "description": "Hacker mode: how many script characters each of your keystrokes produces."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "npm run typecheck && esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@typeghost/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.4"
+  }
+}

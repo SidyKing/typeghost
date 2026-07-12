@@ -1,0 +1,20 @@
+{
+  "name": "@typeghost/core",
+  "version": "0.1.0",
+  "description": "Human-like code typing engine — the heart of TypeGhost.",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.0"
+  }
+}
