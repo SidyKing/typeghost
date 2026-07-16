@@ -4,3 +4,9 @@ dist/
 *.vsix
 *.tsbuildinfo
 .DS_Store
+
+# JetBrains plugin (Gradle)
+.gradle/
+build/
+.intellijPlatform/
+.kotlin/

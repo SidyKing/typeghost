@@ -36,6 +36,12 @@ Press play. Your code types itself at a human pace while you narrate. Pause anyt
 
 Settings: typing speed, typo simulation on/off and rate, characters per keystroke in hacker mode.
 
+## JetBrains plugin (IntelliJ IDEA, PhpStorm, WebStorm, PyCharm…)
+
+The same two modes and the same directives, powered by a Kotlin port of the engine — one plugin covers every IntelliJ-based IDE. Commands live under **Tools → TypeGhost** (`alt+shift+T` to pause/resume, `alt+shift+backspace` to stop).
+
+Until the Marketplace listing is approved, build it yourself: `./gradlew buildPlugin` in `packages/jetbrains-plugin`, then *Settings → Plugins → ⚙ → Install Plugin from Disk…* with the zip from `build/distributions/`.
+
 ## Script directives
 
 Any comment with a `~` glued to the comment marker is a TypeGhost directive. It is stripped from what gets typed:
@@ -59,7 +65,7 @@ console.log(fibonacci(10));
 
 | | TypeGhost | [vscode-hacker-typer](https://github.com/jevakallio/vscode-hacker-typer) | [doitlive](https://github.com/sloria/doitlive) | [demo-magic](https://github.com/paxtonhare/demo-magic) |
 |---|---|---|---|---|
-| Target | **Editors** (VS Code, web, more coming) | VS Code | Terminal | Terminal |
+| Target | **Editors** (VS Code, JetBrains IDEs, web) | VS Code | Terminal | Terminal |
 | Auto mode with human-like typing | ✅ typos, rhythm, thinking pauses | ❌ | partial | partial |
 | Hacker mode (mash keys) | ✅ | ✅ | ✅ | ❌ |
 | Checkpoints / pauses in script | ✅ | ~ | ✅ | ✅ |
@@ -75,6 +81,7 @@ packages/
   core/               @typeghost/core — the typing engine (pure TS, tested, no editor deps)
   vscode-extension/   the VS Code extension
   web-demo/           the Monaco-based browser playground
+  jetbrains-plugin/   the IntelliJ Platform plugin (Kotlin port of the engine, Gradle)
 ```
 
 ```bash
@@ -92,8 +99,8 @@ The engine's golden rule, enforced by tests: **whatever the simulation does — 
 - [ ] Publish `@typeghost/core` to npm and the extension to Open VSX (VSCodium, Gitpod)
 - [ ] **Record mode** — code it once for real, TypeGhost captures and replays the session
 - [ ] Multi-file scenarios (open file, jump to line, edit in the middle)
+- [x] JetBrains plugin (IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, GoLand, Rider…)
 - [ ] Checkpoint control from a presentation remote / foot pedal
-- [ ] JetBrains adapter on top of `@typeghost/core`
 - [ ] `//~ speed 30` directive for per-section pacing
 
 Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).

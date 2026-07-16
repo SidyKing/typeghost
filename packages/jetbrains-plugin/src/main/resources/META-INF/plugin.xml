@@ -1,0 +1,81 @@
+<idea-plugin>
+  <id>com.typeghost.jetbrains</id>
+  <name>TypeGhost</name>
+  <vendor url="https://github.com/SidyKing/typeghost">Papa Sidy Mactar TRAORE</vendor>
+
+  <description><![CDATA[
+    <p><b>A teleprompter for your code.</b> Write it once, "type" it live.</p>
+
+    <p>TypeGhost replays pre-written code in your editor with human-like typing —
+    irregular rhythm, thinking pauses, even typos that get noticed and fixed.
+    Perfect for conference talks, screencasts, tutorials and classroom demos:
+    no more typos in front of 300 people.</p>
+
+    <p><img src="https://raw.githubusercontent.com/SidyKing/typeghost/main/docs/demo.gif"
+            alt="TypeGhost demo" width="700"/></p>
+
+    <h3>Two ways to fake it</h3>
+    <ul>
+      <li><b>Auto mode</b> — the code types itself at a human pace while you narrate,
+          stopping at checkpoints wherever you want to talk.</li>
+      <li><b>Hacker mode</b> — you mash any keys, the real script comes out.
+          You physically cannot make a typo.</li>
+    </ul>
+
+    <h3>Script directives</h3>
+    <p>Comments with a <code>~</code> glued to the comment marker control playback
+    and are stripped from the output: <code>//~ pause 800</code>,
+    <code>//~ checkpoint intro</code>. Works in any language
+    (<code>#~</code>, <code>--~</code>, <code>;;~</code>, <code>%~</code>).</p>
+
+    <p>Find the commands under <b>Tools → TypeGhost</b>. Whatever the simulation does,
+    the final buffer is byte-identical to your script — your demo cannot derail.</p>
+
+    <p>Works in IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, GoLand, Rider and every
+    other IntelliJ-based IDE.
+    <a href="https://github.com/SidyKing/typeghost">Sources, web demo and VS Code
+    extension on GitHub</a>.</p>
+  ]]></description>
+
+  <change-notes><![CDATA[
+    <p>0.1.0 — first release: auto mode with human-like typing and checkpoints,
+    hacker mode, pause/resume, script directives.</p>
+  ]]></change-notes>
+
+  <depends>com.intellij.modules.platform</depends>
+
+  <actions>
+    <group id="TypeGhost.Menu" text="TypeGhost" popup="true">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <action id="TypeGhost.PlayFromClipboard"
+              class="com.typeghost.ide.PlayFromClipboardAction"
+              text="Play From Clipboard"
+              description="Auto-type the clipboard content at the caret"/>
+      <action id="TypeGhost.PlayFromFile"
+              class="com.typeghost.ide.PlayFromFileAction"
+              text="Play From File…"
+              description="Auto-type a file's content at the caret"/>
+      <action id="TypeGhost.HackerFromClipboard"
+              class="com.typeghost.ide.HackerFromClipboardAction"
+              text="Hacker Mode From Clipboard"
+              description="Your keystrokes type the clipboard content"/>
+      <action id="TypeGhost.HackerFromFile"
+              class="com.typeghost.ide.HackerFromFileAction"
+              text="Hacker Mode From File…"
+              description="Your keystrokes type a file's content"/>
+      <separator/>
+      <action id="TypeGhost.PauseResume"
+              class="com.typeghost.ide.PauseResumeAction"
+              text="Pause / Resume"
+              description="Pause or resume playback; also continues past checkpoints">
+        <keyboard-shortcut keymap="$default" first-keystroke="alt shift T"/>
+      </action>
+      <action id="TypeGhost.Stop"
+              class="com.typeghost.ide.StopAction"
+              text="Stop"
+              description="Stop TypeGhost and hand the keyboard back">
+        <keyboard-shortcut keymap="$default" first-keystroke="alt shift BACK_SPACE"/>
+      </action>
+    </group>
+  </actions>
+</idea-plugin>
