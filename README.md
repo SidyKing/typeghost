@@ -4,6 +4,7 @@
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/PapaSidyMactarTRAORE.typeghost?label=VS%20Code%20Marketplace&color=7c3aed)](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/PapaSidyMactarTRAORE.typeghost?color=a78bfa)](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)
 [![npm](https://img.shields.io/npm/v/typeghost-core?label=typeghost-core&color=cb3837)](https://www.npmjs.com/package/typeghost-core)
+[![Open VSX](https://img.shields.io/open-vsx/v/PapaSidyMactarTRAORE/typeghost?label=Open%20VSX&color=c160ef)](https://open-vsx.org/extension/PapaSidyMactarTRAORE/typeghost)
 [![License: MIT](https://img.shields.io/badge/License-MIT-a78bfa.svg)](LICENSE)
 
 > **A teleprompter for your code.** Write it once, "type" it live.
@@ -98,7 +99,7 @@ The engine's golden rule, enforced by tests: **whatever the simulation does — 
 
 - [x] Publish the extension to the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)
 - [x] Publish the engine to npm: [`typeghost-core`](https://www.npmjs.com/package/typeghost-core)
-- [ ] Publish the extension to Open VSX (VSCodium, Gitpod)
+- [x] Publish the extension to [Open VSX](https://open-vsx.org/extension/PapaSidyMactarTRAORE/typeghost) (VSCodium, Gitpod, Cursor…)
 - [ ] **Record mode** — code it once for real, TypeGhost captures and replays the session
 - [ ] Multi-file scenarios (open file, jump to line, edit in the middle)
 - [x] JetBrains plugin (IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, GoLand, Rider…)
