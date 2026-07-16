@@ -1,17 +1,43 @@
 {
   "name": "@typeghost/core",
   "version": "0.1.0",
-  "description": "Human-like code typing engine — the heart of TypeGhost.",
+  "description": "Human-like code typing engine — the heart of TypeGhost. Replay pre-written code with realistic rhythm, corrected typos and checkpoints, in any editor you can adapt it to.",
   "license": "MIT",
+  "author": "Papa Sidy Mactar TRAORE",
   "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "files": [
     "dist"
   ],
+  "keywords": [
+    "typing",
+    "typewriter",
+    "live-coding",
+    "presentation",
+    "demo",
+    "screencast",
+    "typing-simulator",
+    "teleprompter",
+    "auto-type"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SidyKing/typeghost.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/SidyKing/typeghost#readme",
+  "bugs": {
+    "url": "https://github.com/SidyKing/typeghost/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "prepublishOnly": "npm run build && npm test"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
