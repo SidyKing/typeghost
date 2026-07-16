@@ -3,19 +3,17 @@
 Release channels and how to ship to each. Versions follow semver; bump the
 relevant `package.json` / `build.gradle.kts` before publishing.
 
-## npm — `@typeghost/core`
+## npm — `typeghost-core`
 
-One-time setup:
-1. `npm login` (on the machine you publish from).
-2. Create the free **typeghost** organization: https://www.npmjs.com/org/create
-   (scoped packages need their scope to exist as your username or an org).
-   If the name is taken, rename the package to the unscoped `typeghost-core`.
+One-time setup: `npm login` on the machine you publish from, with 2FA
+enabled on the account (npm requires it for publishing).
 
 Publish:
 ```bash
-npm publish -w @typeghost/core
+npm publish -w typeghost-core
 ```
-`prepublishOnly` rebuilds and runs the test suite automatically.
+`prepublishOnly` rebuilds and runs the test suite automatically; npm asks
+for the 2FA confirmation interactively.
 
 ## VS Code Marketplace
 

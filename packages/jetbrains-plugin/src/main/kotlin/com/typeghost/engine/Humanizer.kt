@@ -7,7 +7,7 @@ import kotlin.random.Random
  * rhythm, longer pauses after newlines/punctuation, occasional thinking
  * pauses and (optionally) corrected typos.
  *
- * Kotlin port of `@typeghost/core` — the TypeScript test suite is the
+ * Kotlin port of `typeghost-core` — the TypeScript test suite is the
  * reference specification.
  */
 object Humanizer {

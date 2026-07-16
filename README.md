@@ -69,7 +69,7 @@ console.log(fibonacci(10));
 | Auto mode with human-like typing | ✅ typos, rhythm, thinking pauses | ❌ | partial | partial |
 | Hacker mode (mash keys) | ✅ | ✅ | ✅ | ❌ |
 | Checkpoints / pauses in script | ✅ | ~ | ✅ | ✅ |
-| Editor-agnostic core library | ✅ `@typeghost/core` | ❌ | ❌ | ❌ |
+| Editor-agnostic core library | ✅ `typeghost-core` | ❌ | ❌ | ❌ |
 | Maintained | ✅ | ❌ (archived-ish, last push 2023) | ✅ | ~ |
 
 Terminal demos? Use the excellent `doitlive`. Editor demos? That's what TypeGhost is for.
@@ -78,7 +78,7 @@ Terminal demos? Use the excellent `doitlive`. Editor demos? That's what TypeGhos
 
 ```
 packages/
-  core/               @typeghost/core — the typing engine (pure TS, tested, no editor deps)
+  core/               typeghost-core — the typing engine (pure TS, tested, no editor deps)
   vscode-extension/   the VS Code extension
   web-demo/           the Monaco-based browser playground
   jetbrains-plugin/   the IntelliJ Platform plugin (Kotlin port of the engine, Gradle)
@@ -96,7 +96,7 @@ The engine's golden rule, enforced by tests: **whatever the simulation does — 
 ## Roadmap
 
 - [x] Publish the extension to the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)
-- [ ] Publish `@typeghost/core` to npm and the extension to Open VSX (VSCodium, Gitpod)
+- [ ] Publish `typeghost-core` to npm and the extension to Open VSX (VSCodium, Gitpod)
 - [ ] **Record mode** — code it once for real, TypeGhost captures and replays the session
 - [ ] Multi-file scenarios (open file, jump to line, edit in the middle)
 - [x] JetBrains plugin (IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, GoLand, Rider…)

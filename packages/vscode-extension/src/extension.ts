@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { compileScript, EditEvent, Player, PlayerState } from '@typeghost/core';
+import { compileScript, EditEvent, Player, PlayerState } from 'typeghost-core';
 
 type Mode = 'auto' | 'hacker';
 

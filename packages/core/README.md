@@ -1,4 +1,4 @@
-# @typeghost/core
+# typeghost-core
 
 > The typing engine behind [TypeGhost](https://github.com/SidyKing/typeghost) — a teleprompter for your code.
 
@@ -9,13 +9,13 @@ Powers the [TypeGhost VS Code extension](https://marketplace.visualstudio.com/it
 ## Install
 
 ```bash
-npm install @typeghost/core
+npm install typeghost-core
 ```
 
 ## Usage
 
 ```ts
-import { compileScript, Player } from '@typeghost/core';
+import { compileScript, Player } from 'typeghost-core';
 
 const script = compileScript(`function hello() {
   console.log("world");

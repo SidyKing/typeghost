@@ -112,7 +112,7 @@
     "package": "vsce package --no-dependencies"
   },
   "dependencies": {
-    "@typeghost/core": "^0.1.0"
+    "typeghost-core": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",

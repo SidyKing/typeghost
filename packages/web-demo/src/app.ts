@@ -1,4 +1,4 @@
-import { compileScript, EditEvent, Player, PlayerState } from '@typeghost/core';
+import { compileScript, EditEvent, Player, PlayerState } from 'typeghost-core';
 
 declare global {
   interface Window {

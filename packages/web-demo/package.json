@@ -10,7 +10,7 @@
     "dev": "esbuild src/app.ts --bundle --outdir=dist --sourcemap --servedir=. --serve=127.0.0.1:8123"
   },
   "dependencies": {
-    "@typeghost/core": "^0.1.0"
+    "typeghost-core": "^0.1.0"
   },
   "devDependencies": {
     "esbuild": "^0.23.0",
