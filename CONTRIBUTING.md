@@ -32,4 +32,4 @@ The repo is an npm workspace monorepo:
 
 ## Ideas we'd love help with
 
-See the [roadmap](README.md#roadmap) — JetBrains adapter, record mode, and remote-clicker checkpoint control are all up for grabs.
+See the [roadmap](README.md#roadmap) — record mode, remote-clicker checkpoint control and per-section speed directives are all up for grabs.

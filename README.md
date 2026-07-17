@@ -5,6 +5,7 @@
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/PapaSidyMactarTRAORE.typeghost?color=a78bfa)](https://marketplace.visualstudio.com/items?itemName=PapaSidyMactarTRAORE.typeghost)
 [![npm](https://img.shields.io/npm/v/typeghost-core?label=typeghost-core&color=cb3837)](https://www.npmjs.com/package/typeghost-core)
 [![Open VSX](https://img.shields.io/open-vsx/v/PapaSidyMactarTRAORE/typeghost?label=Open%20VSX&color=c160ef)](https://open-vsx.org/extension/PapaSidyMactarTRAORE/typeghost)
+[![JetBrains Plugin](https://img.shields.io/jetbrains/plugin/v/32968?label=JetBrains&color=fe2857)](https://plugins.jetbrains.com/plugin/32968-typeghost)
 [![License: MIT](https://img.shields.io/badge/License-MIT-a78bfa.svg)](LICENSE)
 
 > **A teleprompter for your code.** Write it once, "type" it live.
@@ -40,9 +41,9 @@ Settings: typing speed, typo simulation on/off and rate, characters per keystrok
 
 ## JetBrains plugin (IntelliJ IDEA, PhpStorm, WebStorm, PyCharm…)
 
-The same two modes and the same directives, powered by a Kotlin port of the engine — one plugin covers every IntelliJ-based IDE. Commands live under **Tools → TypeGhost** (`alt+shift+T` to pause/resume, `alt+shift+backspace` to stop).
+The same two modes and the same directives, powered by a Kotlin port of the engine — one plugin covers every IntelliJ-based IDE (2024.2+).
 
-Until the Marketplace listing is approved, build it yourself: `./gradlew buildPlugin` in `packages/jetbrains-plugin`, then *Settings → Plugins → ⚙ → Install Plugin from Disk…* with the zip from `build/distributions/`.
+**[Install from the JetBrains Marketplace](https://plugins.jetbrains.com/plugin/32968-typeghost)** — or search "TypeGhost" in *Settings → Plugins*. Commands live under **Tools → TypeGhost** (`alt+shift+T` to pause/resume, `alt+shift+backspace` to stop).
 
 ## Script directives
 
